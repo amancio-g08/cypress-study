@@ -13,7 +13,10 @@ describe('Orange HRM Tests', () => {
     firstNameField: "[name='firstName']",
     middleNameField: "[name='middleName']",
     lastNameField: "[name='lastName']",
-    genericField: ".oxd-input--active"
+    genericField: ".oxd-input--active",
+    dataField: "[placeholder='yyyy-dd-mm']",
+    dateCloseButton: ".--close",
+    submitButton: "[type='submit']"
   }
 
   it.only('User Info Update - Success', () => {
@@ -27,9 +30,12 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
     cy.get(selectorsList.middleNameField).clear().type('MiddleNameTest')
     cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
-    cy.get(selectorsList.genericField).eq(3).clear().type('Employee')
-    cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest')
+    cy.get(selectorsList.genericField).eq(4).clear().type('OtherTest')
     cy.get(selectorsList.genericField).eq(5).clear().type('DriversLicenseTest')
+    cy.get(selectorsList.genericField).eq(6).clear().type('2025-12-12')
+    cy.get(selectorsList.dateCloseButton).click()
+    cy.get(selectorsList.submitButton).eq(0).click()
+    cy.get('body').should('contain', 'Successfully Updated')
     
   })
   it('Login - Fail', () => {
