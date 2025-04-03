@@ -13,8 +13,7 @@ describe('Orange HRM Tests', () => {
     firstNameField: "[name='firstName']",
     middleNameField: "[name='middleName']",
     lastNameField: "[name='lastName']",
-    employeeIdField: ".oxd-input--active"
-
+    genericField: ".oxd-input--active"
   }
 
   it.only('User Info Update - Success', () => {
@@ -25,8 +24,12 @@ describe('Orange HRM Tests', () => {
     cy.location('pathname').should('equal', '/web/index.php/dashboard/index')
     cy.get(selectorsList.dashboardGrid)
     cy.get(selectorsList.myInfoButton).click()
-    cy.get(selectorsList.employeeIdField).eq(4).type('2')
-
+    cy.get(selectorsList.firstNameField).clear().type('FirstNameTest')
+    cy.get(selectorsList.middleNameField).clear().type('MiddleNameTest')
+    cy.get(selectorsList.lastNameField).clear().type('LastNameTest')
+    cy.get(selectorsList.genericField).eq(3).clear().type('Employee')
+    cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest')
+    cy.get(selectorsList.genericField).eq(5).clear().type('DriversLicenseTest')
     
   })
   it('Login - Fail', () => {
