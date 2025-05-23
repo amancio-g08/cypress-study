@@ -6,6 +6,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
 
-    baseUrl: 'https://opensource-demo.orangehrmlive.com/web/index.php'
+    baseUrl: 'https://pdvtechat-orangehrm.xn7egy.easypanel.host/web/index.php'
   },
 });
