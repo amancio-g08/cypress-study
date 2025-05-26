@@ -1,11 +1,10 @@
 {
     "userSuccess": {
-      "username": "pdvtec",
-      "password": "Pdvtec2214@"
+      "username": "Admin",
+      "password": "admin123"
     },
-    
     "userFail": {
       "username": "teste",
-      "passowrd": "teste"
+      "password": "teste"
     }
   }
